@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 import "./Navbar.scss";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <a className="logo" href="#">
+      <a className="logo" href="/">
         TNL
       </a>
       <div className="menu">
-        <a className="menu-item" href="#">
+        <a className="menu-item" href="/why-us">
           Why Us
         </a>
         |

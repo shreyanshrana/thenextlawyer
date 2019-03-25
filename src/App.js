@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Services from "./Components/Services/Services";
-import About from "./Components/About";
+import Why_Us from "./Components/Why_Us";
 import Contact from "./Components/Contact";
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/services" component={Services} />
             <Route path="/contactus" component={Contact} />
-            <Route path="/about" component={About} />
+            <Route path="/why-us" component={Why_Us} />
           </React.Fragment>
         </BrowserRouter>
       </React.Fragment>

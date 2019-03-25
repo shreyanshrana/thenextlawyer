@@ -70,7 +70,9 @@ class Search extends React.Component {
       suggestions: []
     });
   };
-
+  shouldRenderSuggestions(value) {
+    return value.trim().length >= 0;
+  }
   onSuggestionSelected = (
     event,
     { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
@@ -97,6 +99,7 @@ class Search extends React.Component {
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
+        // alwaysRenderSuggestions={true}
         onSuggestionSelected={this.onSuggestionSelected}
       />
     );

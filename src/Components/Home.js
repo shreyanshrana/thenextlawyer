@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Navbar from "./Home/Navbar";
-import Search from "./Home/Search";
+import BottomNav from "./Home/BottomNav";
+import Landing from "./Home/Landing";
 export default class Home extends Component {
   render() {
     return (
-      <div class="home">
-        <Navbar />
-        <Search />
+      <div className="home">
+        <Landing />
+        <BottomNav />
       </div>
     );
   }
