@@ -1,0 +1,3 @@
+const keys = {
+    'APIkey': 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B'
+}
