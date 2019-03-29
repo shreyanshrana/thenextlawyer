@@ -9,14 +9,16 @@ class Card extends Component {
   render() {
     const { card_title, card_info, font_awesome_loader } = { ...this.props };
     return (
-      <div className="card">
-        <div className="card__first-half">
-          <div className="card-title">{card_title}</div>
-          <div className="card-info">{card_info}</div>
-        </div>
-        <div className="card__second-half">
-          <div className="card-icon-holder">
-            <i className={font_awesome_loader} />
+      <div className="card-container">
+        <div className="card">
+          <div className="card__first-half">
+            <div className="card-title">{card_title}</div>
+          </div>
+          <div className="card__second-half">
+            <div className="card-icon-holder">
+              <i className={font_awesome_loader} />
+            </div>
+            <div className="card-info">{card_info}</div>
           </div>
         </div>
       </div>

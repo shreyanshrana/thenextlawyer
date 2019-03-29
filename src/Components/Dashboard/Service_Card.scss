@@ -1,0 +1,32 @@
+body {
+  background-color: whitesmoke;
+}
+.service-card {
+  &__container {
+    // background-color: red;
+    position: absolute;
+    top: 15%;
+    left: 55%;
+    min-width: 80vw;
+    transform: translate(-50%, 0%);
+    overflow: hidden;
+  }
+
+  &__holder {
+    padding: 5px;
+    width: 33%;
+    float: left;
+  }
+  padding: 10px;
+  min-height: 100px;
+
+  //   margin: 10px;
+  color: rgba(white, 1);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(black, 0.1);
+  &__title {
+    font-size: 28px;
+    padding: 5px 0;
+  }
+}

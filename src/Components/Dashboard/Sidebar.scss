@@ -1,0 +1,38 @@
+.sidebar {
+  &__container {
+    @media screen and(max-width:900px) {
+      display: none;
+    }
+    height: 100vh;
+    position: fixed;
+    // top: 50%;
+    // transform: translateY(-50%);
+    width: 5.5vw;
+    background-color: (#5e4592);
+  }
+
+  &__icon {
+    &-focussed {
+      color: #5e4592;
+      background-color: whitesmoke;
+    }
+    &-container {
+      position: relative;
+      top: 45%;
+      left: 50%;
+      //   border: 1px solid red;
+      transform: translate(-50%, -50%);
+    }
+    // position: relative;
+    // left: 50%;
+    // background-color: red;
+    min-width: 5.5vw;
+    text-align: center;
+    // border: 1px solid red;
+    // transform: translateX(-50%);
+    font-size: 45px;
+    padding: 30px 7px;
+    color: white;
+    background-color: #5e4592;
+  }
+}

@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+.bottomnav {
+  position: absolute;
+
+  font-family: "Ubuntu", sans-serif;
+
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  overflow: hidden;
+  &__item {
+    text-align: center;
+
+    font-size: 24px;
+    padding: 5px;
+    width: 33%;
+    float: left;
+    &:hover {
+      a {
+        color: #1b2b6d;
+      }
+    }
+    a {
+      //   color: #515568;
+      color: white;
+      font-family: "Ubuntu", sans-serif;
+
+      transition: 0.3s all;
+      cursor: pointer;
+      //   &:hover {
+      //     // color: red;
+      //     box-shadow: 0px 0 10px white;
+      //     border: 0;
+      //   }
+    }
+  }
+}

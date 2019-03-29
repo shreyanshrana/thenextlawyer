@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,900");
+.profile {
+  @media screen and(max-width:600px) {
+    min-width: 80vw;
+    min-height: 60vh;
+  }
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom, #24c6dc, #514a9d);
+
+  //   background: linear-gradient(to right, #cb356b, #bd3f32);
+  min-height: 80vh;
+  min-width: 30vw;
+  box-shadow: 0 0 25px rgba(#261d88, 0.5);
+  &__user {
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    padding: 40px;
+    display: block;
+  }
+  &__text {
+    color: white;
+    font-size: 15px;
+    // padding: 10px;
+    margin: 10px 0;
+    width: 40%;
+    font-family: Roboto;
+    font-weight: 300;
+    // border: 1px solid blue;
+    // position: relative;
+    // left: 20%;
+    // top: 100%;
+    text-align: center;
+    display: inline-block;
+    // transform: translate(-50%, 0%);
+  }
+  &__info {
+    width: 50%;
+    padding: 2px;
+    text-align: center;
+    background-color: white;
+    color: #261d88;
+    // position: relative;
+    // right: 10%;
+    font-size: 15px;
+    // transform: translate(-50%, 0%);
+    // padding: 0 50px;
+    // border: 1px solid blue;
+    display: inline-block;
+    // text-align: cent
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(white, 0.7);
+  }
+  &__outbox {
+    // border: 1px solid blue;
+  }
+}
