@@ -13,10 +13,35 @@
         &-head {
             // box-shadow: 0.25rem 0.25rem  12rem #eee inset;
             text-align: center;
-            color: grey; 
+            // display: inline-block;
+            color: grey;
+            // float: left;
             height: 10%;
             margin: auto;
             margin-top: 3rem;
+            transition: 0.5s;
+            &-main {
+                // display: inline-block;
+                // float: left;
+                transition: 0.5s;
+                animation: simple-fade-in 1s ;
+            }
+            &-dynamic {
+                // display: inline-block;
+                // float: left;
+                transition: 0.5s;
+                // animation: simple-fade-in 1s ;
+                &-Individuals {
+                    -webkit-background-clip: text;
+                    background-image: linear-gradient( 90deg, #FFD071, #FF677B );
+                    background-clip: text;
+                    color: transparent;
+                    background-size: 400% 400%;
+                    -webkit-animation: Gradiena 20s ease infinite;
+                    -moz-animation: Gradiena 20s ease infinite;
+                    animation: Gradiena 20s ease infinite;
+                }
+            }
         }
         &-options {
             height: 50%;
@@ -68,7 +93,8 @@
                     top: 0;
                     position: absolute;
                     box-shadow: 0rem 2rem 5rem #ddd;
-                    height: 145%;
+                    // height: 145%
+                    text-align: center;
                     width: 80%;
                     transition: 1s;
                     transform: translate3d(-50%, -15%, 0);
@@ -161,6 +187,22 @@
             &-element {
                 display: inline-block;
                 // background-color: #0A4CCE;
+                .test-text {
+                    & fieldset{
+                        border-radius: 1rem;
+                        border-color: white;
+                        background: linear-gradient(90deg, #eee, transparent);
+                        background-size: 400% 400%;
+                        -webkit-animation: Gradiena 12s ease infinite;
+                        -moz-animation: Gradiena 12s ease infinite;
+                        animation: Gradiena 12s ease infinite;
+                        // padding-left: 3rem;
+                    }
+                    & label {
+                        font-size: 1.25rem;
+                    }
+                    // background-color: white;
+                }
             }
         }
         &-Individuals {
@@ -201,6 +243,7 @@
     height: 4vh;
     font-size: 1.25rem;
     padding-left: 2rem;
+    border-radius: 10rem;
     // background-color: rgba($color: #fff, $alpha: 0.55);
     // border-top: solid white 1rem;
     // position: relative;

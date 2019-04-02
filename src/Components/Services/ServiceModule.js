@@ -258,7 +258,7 @@ export default class ServiceModule extends Component {
         else setvars[event.target.name] = event.target.value
 
         this.setState({
-            setvars: setvars
+            setvars
         })
     }
 
@@ -464,3 +464,8 @@ export default class ServiceModule extends Component {
         )
     }
 }
+
+class QuestionModule {
+        
+}
+

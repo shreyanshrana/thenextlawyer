@@ -1,4 +1,4 @@
-.landing {
-    background-image: url('/src/res/img/background-home.jpg');
-    background-size: 100%;
-}
+@import 'landing';
+@import 'header';
+@import 'auth';
+@import 'services';
