@@ -47,8 +47,8 @@ export default class Auth extends Component {
                             textColor="primary"
                             variant="fullWidth"
                         >
-                            <Tab label="Item One" />
-                            <Tab label="Item Two" />
+                            <Tab label="Login" />
+                            <Tab label="SignUp" />
                         </Tabs>
                     </AppBar>
                     <SwipeableViews

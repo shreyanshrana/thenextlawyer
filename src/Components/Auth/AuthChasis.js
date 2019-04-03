@@ -6,9 +6,6 @@ import React, { Component } from 'react'
 // Auth Functionality
 import Auth from './Auth';
 
-// Auth Context
-import AuthContext from '../context/AuthContext';
-
 export default class AuthChasis extends Component {
 
     state = {
@@ -19,9 +16,6 @@ export default class AuthChasis extends Component {
         isAuthOnDisplay: false,
         authDefaultMode: null,
     }
-
-    // Auth Context Instance
-    static contextType = AuthContext
 
     displayAuth = (mode) => {
         this.setState({

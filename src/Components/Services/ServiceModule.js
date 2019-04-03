@@ -12,7 +12,6 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 // Auth Context
-import AuthContext from '../context/AuthContext'
 
 // Import the loader
 import Container from '../Utilities/Loader';
@@ -42,19 +41,17 @@ export default class ServiceModule extends Component {
         loading: true
     }
 
-    static contextType = AuthContext;
-
     componentWillMount = () => {
         console.log('Props before the state set.....', this.props.service);
         this.setState({
             view: this.props.service,
             service: this.props.service,
             category: this.props.category,
-            secret: this.context.secret
         });
         console.log('state set as', this.state);
-        if(this.context.isLoggedIn) this.getSessionID();
-        else this.getForm();
+        // if(this.context.isLoggedIn) this.getSessionID();
+        // else this.getForm();
+        this.getForm();
     }
 
     // Start an interview

@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 
 // Material UI
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 // Login Request
 import Axios from 'axios';
 
 // Setup the Context Accordingly
-import AuthContext from '../context/AuthContext';
 
 // APIKey
 import Key from '../config/config';
@@ -21,9 +21,6 @@ export default class Login extends Component {
         password: null,
         name: null
     }
-
-    // Auth Context Instance
-    static contextType = AuthContext;
 
     // Traditional Custom Frontend code for docassemble
     login = () => {
@@ -51,7 +48,7 @@ export default class Login extends Component {
                 this.setState({
                     name: name
                 })
-                this.context.login(this.state.email, response.data.id, this.state.name, this.state.password, res.data)
+                // this.context.login(this.state.email, response.data.id, this.state.name, this.state.password, res.data)
             }).catch( err=> {
                 console.log('Unable to get the info and hence the name of the User', err);
             })
@@ -112,17 +109,17 @@ export default class Login extends Component {
     
     render() {
         return (
-            <div className='auth-login'>
+            <div className='authbox-login'>
                 <TextField
                     id="outlined-name"
-                    label="Username"
+                    label="Email/Username"
                     name='email'
                     onChange={this.handleFormChange}
                     // className={classes.textField}
                     // value={this.state.name}
                     // onChange={this.handleChange('name')}
                     margin="normal"
-                    variant="outlined"
+                    className='auth-form'
                 />
                 <TextField
                     id="outlined-name"
@@ -132,11 +129,14 @@ export default class Login extends Component {
                     // value={this.state.name}
                     onChange={this.handleFormChange}
                     margin="normal"
-                    variant="outlined"
+                    className='auth-form'
                 />
-                <button className='auth-login-btn' onClick={this.login}>
+                <Button variant="contained" color="secondary" className='auth-btn'>
                     Login
-                </button>
+                </Button>
+                {/* <button className='auth-login-btn' onClick={this.login}>
+                    Login
+                </button> */}
             </div>
         )
     }
