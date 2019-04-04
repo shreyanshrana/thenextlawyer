@@ -17,22 +17,35 @@ export default class Auth extends Component {
     state = {
         isLoogedIn: null,
         isVisible: false,
-        mode: null,
-        value: 1 //takes the value 'Login' | 'Register
+        mode: '',
+        value: null //takes the value 'Login' | 'Register
     }
 
     handleChange = (event, value) => {
         this.setState({ value });
     };
     
-      handleChangeIndex = index => {
+    handleChangeIndex = index => {
         this.setState({ value: index });
     };
 
     componentWillMount = () => {
+        // Must set state only once in the componentWillMount Function
+        console.log('Mode (Props): ', this.props.mode);
+        var mode = this.props.mode;
+        var value;
+
+        if(mode == 'Login') value = 0;
+        else if(mode == 'Register') value = 1;
+
         this.setState({
-            mode: this.props.mode
+            mode,
+            value
         })
+    }
+
+    componentDidMount = () => {
+        console.log('State: ', this.state);
     }
 
     render() {

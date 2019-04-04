@@ -54,7 +54,7 @@ export default class AuthChasis extends Component {
                                 <button className='authchasis-options-btn authchasis-options-btn-login display10' onClick={() => this.displayAuth('Login')}>
                                     Login
                                 </button>
-                                <button className='authchasis-options-btn authchasis-options-btn-register display10'>
+                                <button className='authchasis-options-btn authchasis-options-btn-register display10' onClick={() => this.displayAuth('Register')}>
                                     Register
                                 </button>
                             </div>

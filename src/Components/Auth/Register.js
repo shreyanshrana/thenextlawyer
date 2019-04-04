@@ -15,18 +15,19 @@ import { compose } from 'recompose';
 // Firebase
 import { withFirebase } from '../Firebase/index';
 
+
+const Register = () => (
+    <div>
+        <RegisterForm/>
+    </div>
+);
+
 const INITIAL_STATE = {
     email: '',
     password: '',
     passwordTwo: '',
     error: null,
 };
-
-const Register = () => (
-    <RegisterForm/>
-)
-
-const RegisterForm = compose( withRouter, withFirebase )(RegisterFormBase);
 
 class RegisterFormBase extends Component {
     
@@ -35,9 +36,9 @@ class RegisterFormBase extends Component {
     }
 
     onSubmit = (event) => {
-        const { email, passwordOne } = this.state;
+        const { email, password } = this.state;
         this.props.firebase
-        .doCreateUserWithEmailAndPassword(email, passwordOne)
+        .doCreateUserWithEmailAndPassword(email, password)
         .then(authUser => {
             this.setState({ ...INITIAL_STATE });
             this.props.history.push('/dashboard');
@@ -102,7 +103,7 @@ class RegisterFormBase extends Component {
                     margin="normal"
                     className='auth-form'
                 />
-                <Button variant="contained" color="secondary" className='auth-btn' disabled={isInvalid}>
+                <Button variant="contained" color="secondary" className='auth-btn' disabled={isInvalid} onClick={this.onSubmit}>
                     Register
                 </Button>
                 {error && <p>{error.message}</p>}
@@ -110,6 +111,13 @@ class RegisterFormBase extends Component {
         )
     }
 }
+
+
+const RegisterForm = compose(
+    withRouter,
+    withFirebase,
+)(RegisterFormBase);
+
 
 export default Register;
 export { RegisterFormBase };

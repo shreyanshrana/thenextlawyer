@@ -1,5 +1,6 @@
 // Basic Functionality
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 
 // Material UI
 import TextField from '@material-ui/core/TextField';
@@ -7,19 +8,53 @@ import Button from '@material-ui/core/Button';
 
 // Login Request
 import Axios from 'axios';
+import { compose } from 'recompose';
 
 // Setup the Context Accordingly
 
 // APIKey
 import Key from '../config/config';
 
-export default class Login extends Component {
+// Firebase
+import { withFirebase } from '../Firebase';
+
+const Login = () => (
+    <div>
+      <LoginForm />
+    </div>
+  );
+  
+const INITIAL_STATE = {
+    email: '',
+    password: '',
+    error: null,
+};
+  
+class LoginFormBase extends Component {
 
     state = {
-        isLoggedIn: null,
-        email: null,
-        password: null,
-        name: null
+        ...INITIAL_STATE
+    }
+
+    onSubmit = () => {
+        const { email, password } = this.state;
+        this.props.firebase
+        .doSignInWithEmailAndPassword(email, password)
+        .then(() => {
+            this.setState({ ...INITIAL_STATE });
+            this.props.history.push('/dashboard');
+        })
+        .catch(error => {
+            this.setState({ error });
+        });
+
+        event.preventDefault();
+    }
+    
+    handleFormChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     // Traditional Custom Frontend code for docassemble
@@ -100,14 +135,12 @@ export default class Login extends Component {
         //     });
         // });
     }
-
-    handleFormChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
     
     render() {
+
+        const { email, password, error } = this.state;
+        const isInvalid = password === '' || email === '';
+
         return (
             <div className='authbox-login'>
                 <TextField
@@ -131,8 +164,8 @@ export default class Login extends Component {
                     margin="normal"
                     className='auth-form'
                 />
-                <Button variant="contained" color="secondary" className='auth-btn'>
-                    Login
+                <Button variant="contained" color="secondary" className='auth-btn' disabled={isInvalid} onClick={this.onSubmit}>
+                    Log In
                 </Button>
                 {/* <button className='auth-login-btn' onClick={this.login}>
                     Login
@@ -141,3 +174,11 @@ export default class Login extends Component {
         )
     }
 }
+
+const LoginForm = compose(
+    withRouter,
+    withFirebase,
+)(LoginFormBase);
+
+export default Login;
+export { LoginForm };
