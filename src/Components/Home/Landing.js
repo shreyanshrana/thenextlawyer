@@ -69,7 +69,7 @@ const Landing = props => {
       </div>
       <div className="landing__how-it-works clearfix">
         <div className="display7 text-center">How does TNL work ?</div>
-        <div className="display8 text-center font-weight-light">
+        <div className="display8 text-center font-weight-light p-3">
           Its as simple as 1, 2, 3 !
         </div>
         <div className="col-4 float-left landing__how-it-works--card-container">
