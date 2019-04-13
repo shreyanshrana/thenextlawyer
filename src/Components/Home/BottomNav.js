@@ -9,7 +9,7 @@ const BottomNav = props => {
         <a href="/why-us">Why Us</a>
       </div>
       <div className="bottomnav__item">
-        <a href="/services">Services</a>
+        <a href="/services">Servssices</a>
       </div>
       <div className="bottomnav__item">
         <a href="/contact-us">Contact Us</a>
