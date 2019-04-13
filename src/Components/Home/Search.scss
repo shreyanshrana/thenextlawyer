@@ -4,10 +4,10 @@ body {
 
 .react-autosuggest__ {
   &container {
-    position: relative;
+    position: absolute;
     left: 50%;
     display: inline-block;
-    top: 30%;
+    top: 55%;
     transform: translate(-50%, -50%);
   }
   &input {
@@ -17,7 +17,7 @@ body {
     color: black;
 
     font-weight: 300;
-    font-family: Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 22px;
     border: 0px solid #aaa;
     border-radius: 10px;
@@ -37,7 +37,7 @@ body {
     &container {
       text-align: center;
       border: 0;
-      font-family: "Ubuntu", sans-serif;
+      font-family: "Roboto", sans-serif;
       display: none;
       &--open {
         display: block;

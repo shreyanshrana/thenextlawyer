@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Home from "./Components/Home";
+import Landing from "./Components/Home/Landing";
 import Services from "./Components/Services/Services";
 import Why_Us from "./Components/Why_Us";
 import Contact from "./Components/Contact";
 import Dashboard from "./Components/Dashboard";
+
+import "./styles/sass/main.scss";
+
 class App extends Component {
   render() {
     return (
@@ -13,7 +16,7 @@ class App extends Component {
         <BrowserRouter>
           {/* Browser Router can only have one child */}
           <React.Fragment>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Landing} />
             <Route exact path="/services" component={Services} />
             <Route path="/contact-us" component={Contact} />
             <Route path="/why-us" component={Why_Us} />

@@ -1,11 +1,11 @@
 .footer {
-  background-color: #ffec19;
+  background-color: #0081cf;
   padding: 50px 150px;
 
   &__social-media-icons {
     padding: 10px;
     padding-bottom: 0;
-    float: left;
+    // float: right;
   }
 
   &__break-line {
@@ -17,8 +17,8 @@
     background-color: black;
     margin: 0;
   }
-  &__alert{
-      padding:40px 0px;
-      float:left;
+  &__alert {
+    padding: 40px 0px;
+    float: left;
   }
 }

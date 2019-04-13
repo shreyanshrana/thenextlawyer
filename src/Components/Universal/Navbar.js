@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Login from "./Login";
+// import Login from "./Login";
 //Style
 import "./Navbar.scss";
 
@@ -22,21 +22,10 @@ class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top animated bounceInDown">
           <a className="navbar-brand" href="#">
-            talkItOut
+            <img src="./src/res/img/logo.png" />
           </a>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a
-                className="nav-item nav-link"
-                href="javascript:void(0);"
-                onClick={toggleGetStarted}
-              >
-                Get Started <span class="sr-only">(current)</span>
-                <ion-icon name="arrow-dropdown" />
-              </a>
-              <a className="nav-item nav-link" href="#">
-                Blogs
-              </a>
               <a className="nav-item nav-link" href="#about-us">
                 About Us
               </a>
@@ -50,11 +39,7 @@ class Navbar extends Component {
           </div>
 
           <div className="float-right">
-            <a className="nav-link navbar-login">
-              <Link className="nav-link navbar-login" to="/Login">
-                Log-In
-              </Link>
-            </a>
+            <a className="nav-link navbar-login">Log-In</a>
           </div>
         </nav>
       </div>

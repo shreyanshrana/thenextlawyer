@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./Home/Navbar";
+// import Navbar from "./Home/Navbar";
 import Card from "./Why_Us/Card";
 
 export default class Why_Us extends Component {

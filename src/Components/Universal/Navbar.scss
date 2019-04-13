@@ -2,24 +2,27 @@
   padding: 5px;
 }
 .navbar-brand {
-  padding: 10px;
-  font-weight: 100;
+  padding: 5px;
+  font-weight: 400;
+  color: white !important;
   //   color: #ffec19 !important;
 }
 .navbar {
-  background-color: white !important;
+  background-color: #0081cf !important;
 }
 .navbar-login {
   color: darken(#ffec19, 5%);
 }
 .nav-link {
   text-transform: uppercase;
+  color: white !important;
+
   font-size: 95%;
   letter-spacing: 0.5px;
   font-weight: 900;
-  padding: 10px;
+  padding: 5px;
   transition: all 0.3s;
   &:hover {
-    color: #75b9be !important;
+    color: #f9f871 !important;
   }
 }
