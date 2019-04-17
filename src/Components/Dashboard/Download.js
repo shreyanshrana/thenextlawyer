@@ -1,77 +1,29 @@
 import React, { Component } from "react";
-
+import Download_Icon from "./Download_Icon";
 export default class Download extends Component {
   render() {
+    const buttonClick = () =>{
+      console.log("he");
+      return(
+        <Download_Icon
+            document_title="Document 2"
+            document_state="incomplete"
+            document_downloadLink="test-link1"
+            document_editLink="test-link2"
+          />
+      )
+    }
     return (
-      <div className="services__container">
+      <div className="dashboard__container clearfix">
         <div className="display6">Your Documents</div>
         <div className="col-12 p-3 clearfix" style={{ width: "800px" }}>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 1
-              </div>
-            </div>
-          </div>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 2
-              </div>
-            </div>
-          </div>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 3
-              </div>
-            </div>
-          </div>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 4
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 p-3 clearfix" style={{ width: "800px" }}>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 1
-              </div>
-            </div>
-          </div>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 2
-              </div>
-            </div>
-          </div>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 3
-              </div>
-            </div>
-          </div>
-          <div className="col-3 text-center float-left">
-            <div className="display3 mb-0">
-              <ion-icon name="document" />
-              <div className="display10" style={{ margin: "-30%" }}>
-                Document 4
-              </div>
-            </div>
-          </div>
+          <Download_Icon
+            document_title="Document 1"
+            document_state="complete"
+            document_downloadLink="test-link"
+            document_editLink="test-link"
+          />
+          <button onClick={buttonClick}>hello</button>
         </div>
       </div>
     );
