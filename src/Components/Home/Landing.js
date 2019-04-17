@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Search from "./Search";
 import "./Landing.scss";
 
@@ -62,12 +63,12 @@ const Landing = props => {
         <div className="text-center display6 color-white font-weight-light">
           Any Questions ?
           <br />
-          <a href="" className="btn btn-outline-light btn-lg">
+          <Link to="/contact-us" className="btn btn-outline-light btn-lg">
             Contact Us !
-          </a>
+          </Link>
         </div>
       </div>
-      <div className="landing__how-it-works clearfix">
+      <div className="landing__how-it-works clearfix" id="how-it-works">
         <div className="display7 text-center">How does TNL work ?</div>
         <div className="display8 text-center font-weight-light p-3">
           Its as simple as 1, 2, 3 !

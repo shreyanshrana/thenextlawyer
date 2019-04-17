@@ -5,23 +5,25 @@
     }
     height: 100vh;
     position: fixed;
-    // top: 50%;
-    // transform: translateY(-50%);
-    width: 5.5vw;
-    background-color: (#5e4592);
+    max-width: 200px;
+    background-color: (#eee);
   }
 
+  &__option {
+    padding: 25px 0;
+  }
   &__icon {
     &-focussed {
-      color: #5e4592;
+      color: darken(#0081cf, 10%);
       background-color: whitesmoke;
     }
     &-container {
-      position: relative;
-      top: 45%;
-      left: 50%;
+      margin-top: 90px;
+      // position: absolute;
+      // top: 10%;
+      // left: 50%;
       //   border: 1px solid red;
-      transform: translate(-50%, -50%);
+      // transform: translate(-50%, -50%);
     }
     // position: relative;
     // left: 50%;
@@ -33,6 +35,6 @@
     font-size: 45px;
     padding: 30px 7px;
     color: white;
-    background-color: #5e4592;
+    background-color: #0081cf;
   }
 }

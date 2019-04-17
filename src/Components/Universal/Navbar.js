@@ -20,20 +20,17 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top animated bounceInDown">
-          <a className="navbar-brand" href="#">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top animated fadeIn">
+          <Link className="navbar-brand" to="/">
             <img src="./src/res/img/logo.png" />
-          </a>
+          </Link>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a className="nav-item nav-link" href="#about-us">
-                About Us
-              </a>
+              <Link className="nav-item nav-link" to="/why-us">
+                Why Us
+              </Link>
               <a className="nav-item nav-link" href="#how-it-works">
                 How It Works
-              </a>
-              <a className="nav-item nav-link " href="#pricing">
-                Pricing
               </a>
             </div>
           </div>
