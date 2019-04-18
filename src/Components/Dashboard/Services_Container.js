@@ -1,78 +1,126 @@
 import React from "react";
-import Service_Card from "./Service_Card";
-import "./Service_Card.scss";
+import { Link } from "react-router-dom";
+import "./Services_Container.scss";
 const Services_Container = props => {
   return (
-    <div className="service-card__container">
-      <Service_Card
-        card_title="Affidavit Regarding Age"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #1d976c, #93f9b9)"
-      />
-      <Service_Card
-        card_title="Employment Contract"
-        card_desc="2nd best boi adi"
-        gradient="linear-gradient(to right, #eb3349, #f45c43)"
-      />
-      <Service_Card
-        card_title="Gift Deed"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #dd5e89, #f7bb97)"
-      />
-      <Service_Card
-        card_title="General Power of Attorney"
-        card_desc="best boi shreyansh"
-        width="49.5%"
-        gradient="linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb)"
-      />
-      <Service_Card
-        card_title="Marriage Registeration"
-        card_desc="best boi shreyansh"
-        width="49.5%"
-        gradient="linear-gradient(0deg, #1d2b64, #f8cdda)"
-      />
-      <Service_Card
-        card_title="Name Change Affidavit"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #ff512f, #f09819)"
-      />
-      <Service_Card
-        card_title="No Third Party Loss"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #aa076b, #61045f)"
-      />
-      <Service_Card
-        card_title="NDA"
-        card_desc="Non Disclosure Agreement"
-        gradient="linear-gradient(to right, #f09819, #edde5d)"
-      />
-      <Service_Card
-        card_title="Special Power of Attorney"
-        card_desc="best boi shreyansh"
-        width="49.5%"
-        gradient="linear-gradient(to right, #e55d87, #5fc3e4)"
-      />
-      <Service_Card
-        card_title="Sale/Purchase of Vehicle"
-        card_desc="best boi shreyansh"
-        width="49.5%"
-        gradient="linear-gradient(to right, #cc95c0, #dbd4b4, #7aa1d2)"
-      />
-      <Service_Card
-        card_title="Rent"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #cc95c0, #dbd4b4, #7aa1d2)"
-      />
-      <Service_Card
-        card_title="Revocation of POA"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #da22ff, #9733ee)"
-      />
-      <Service_Card
-        card_title="Will"
-        card_desc="best boi shreyansh"
-        gradient="linear-gradient(to right, #004ff9, #fff94c)"
-      />
+    <div className="dashboard__container">
+      <div className="display6">Create New</div>
+      <div className="display8">Personal and Family</div>
+      <div className="services___btn-container">
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            General Power of Attorney for Property
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Special Power of Attorney for Property
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-4 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Will
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-4 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Marriage Registration
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-4 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Gift Deed
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-6 float-left ">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Revocation of Power of Attorney
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Sale/Purchase of Vehicle
+          </Link>
+        </div>
+      </div>
+      <div className="display8">Rent or Lease</div>
+      <div className="services___btn-container">
+        <div className="py-2 px-3 col-12 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Rental Agreement
+          </Link>
+        </div>
+      </div>
+      <div className="display8">General Affidavits</div>
+      <div className="services___btn-container">
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Name Changing Affidavit
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Affidavit Regarding Age
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-12 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            No third party loss in accident Affidavit
+          </Link>
+        </div>
+      </div>
+      <div className="display8">For Companies</div>
+      <div className="services___btn-container">
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Non Disclosure Agreement
+          </Link>
+        </div>
+        <div className="py-2 px-3 col-6 float-left">
+          <Link
+            to="/dashboard/services/gpa"
+            className="btn  btn-outline-primary col-12"
+          >
+            Employment Contract
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

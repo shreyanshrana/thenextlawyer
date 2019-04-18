@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.scss";
 
-const toggleClass = () => {
-  this.set;
-};
-
 class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -46,39 +42,36 @@ class Sidebar extends Component {
       <div>
         <div className="sidebar__container">
           <div className="sidebar__icon-container">
-            <Link to="/dashboard/services">
-              <button style={{ border: 0 }} onClick={this.serviceshandleClick}>
-                <i
-                  className={
-                    this.state.services
-                      ? "fa fa-file-signature sidebar__icon sidebar__icon-focussed"
-                      : "fa fa-file-signature sidebar__icon"
-                  }
-                />
-              </button>
+            <Link
+              to="/dashboard/services"
+              className={
+                this.state.services
+                  ? "float-left col-12 display9 sidebar__option sidebar__icon-focussed"
+                  : "float-left col-12 display9 sidebar__option"
+              }
+              onClick={this.serviceshandleClick}
+            >
+              <span className="display6 col-4 float-left">
+                <ion-icon name="document" />
+              </span>
+
+              <span className="col-8 float-left">Create New Document</span>
             </Link>
-            <Link to="/dashboard/download-form">
-              <button style={{ border: 0 }} onClick={this.downloadhandleClick}>
-                <i
-                  className={
-                    this.state.downloads
-                      ? "fa fa-file-download sidebar__icon sidebar__icon-focussed"
-                      : "fa fa-file-download sidebar__icon"
-                  }
-                />
-              </button>
+            <Link
+              to="/dashboard/download-form"
+              className={
+                this.state.downloads
+                  ? "float-left col-12 display9 sidebar__option sidebar__icon-focussed"
+                  : "float-left col-12 display9 sidebar__option"
+              }
+              onClick={this.downloadhandleClick}
+            >
+              <span className="display6 col-4 float-left">
+                <ion-icon name="filing" />
+              </span>
+              <span className="col-8 float-left">Previous Documents</span>
             </Link>
-            <Link to="/dashboard/profile">
-              <button style={{ border: 0 }} onClick={this.profilehandleClick}>
-                <i
-                  className={
-                    this.state.profile
-                      ? "fa fa-user-circle sidebar__icon sidebar__icon-focussed"
-                      : "fa fa-user-circle sidebar__icon"
-                  }
-                />
-              </button>
-            </Link>
+            
           </div>
         </div>
       </div>

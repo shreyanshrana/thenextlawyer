@@ -2,11 +2,11 @@
   &__container {
     position: fixed;
     z-index: 100;
-    height: 7.5vh;
+    height: 55px;
     // top: 50%;
     // transform: translateY(-50%);
     width: 100vw;
-    background: linear-gradient(to bottom, #24c6dc, #514a9d);
+    background-color: #0081cf;
 
     // border: 1px solid red;
   }
@@ -22,21 +22,19 @@
   }
 
   &__username {
-    // border: 1px solid red;
-    display: inline-block;
+    // border: 1px solid red
     color: white;
     font-size: 24px;
-    position: relative;
-    padding: 0px 10px;
-    left: 90%;
-    transform: translate(-100%, 20%);
+    float: right;
+    padding: 5px;
   }
   &__signout {
-    color: white;
-    display: inline-block;
     font-size: 32px;
-    position: relative;
-    left: 70%;
-    transform: translate(-100%, 20%);
+    float: right;
+    padding: 5px;
+
+    a {
+      color: white !important;
+    }
   }
 }

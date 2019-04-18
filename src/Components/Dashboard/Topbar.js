@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import "./Topbar.scss";
 
 const Topbar = props => {
@@ -7,12 +7,12 @@ const Topbar = props => {
     <div>
       <div className="topbar__container">
         <div className="topbar__logo">TNL</div>
-        <div className="topbar__username">Welcome, {props.name}</div>
-        <div className="topbar__signout">
-          <a href="/log-out">
-            <i className="fa fa-sign-out-alt" />
-          </a>
+        <div className="topbar__signout float-right">
+          <Link to="/log-out">
+            <ion-icon name="log-out" />
+          </Link>
         </div>
+        <div className="topbar__username">Welcome, {props.name}</div>
       </div>
     </div>
   );

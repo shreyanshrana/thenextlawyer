@@ -1,38 +1,65 @@
 .landing {
   //   border: 1px solid red;
   //   overflow: hidden;
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  height: 250px;
-
-  &__logo {
-    font-size: 36px;
-    color: white;
-    text-align: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid white;
-    display: inline-block;
-    padding: 10px 20px;
-    font-weight: bold;
-    line-height: 37px;
-  }
+  // position: absolute;
+  // left: 50%;
+  // top: 45%;
+  // transform: translate(-50%, -50%);
+  margin-top: 58px;
+  height: 70vh;
+  background: url("../../res/img/background-home.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  // background: rgba(#0081cf, 0.2);
   &__title {
-    font-size: 20x;
     color: white;
     text-align: center;
-    font-family: "Ubuntu", sans-serif;
-    padding: 10px;
-    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
+    padding: 5px;
+    padding-top: 110px;
+    font-weight: 100;
   }
   &__subtitle {
     font-size: 18px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Roboto", sans-serif;
     color: white;
     text-align: center;
     padding: 5px;
+  }
+  &__services {
+    padding: 80px;
+    &--button {
+      padding: 20px 60px;
+    }
+  }
+  &__contact-us {
+    padding: 40px;
+  }
+
+  &__how-it-works {
+    padding: 100px 0;
+    &--card-container {
+      padding: 0 45px;
+    }
+  }
+}
+
+.bg-blue {
+  background-color: #0081cf !important;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.card {
+  font-family: "Roboto", sans-serif !important;
+  min-height: 400px !important;
+  box-shadow: 0 0 15px rgba(black, 0.2) !important;
+  padding: 0 10px;
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 0 5px rgba(black, 0.8) !important;
   }
 }
