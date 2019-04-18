@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import Landing from "./Home/Landing";
+import Auth from "./Auth/Auth";
+import AuthChasis from "./Auth/AuthChasis";
+import "./Home/Navbar.scss";
+
 export default class Home extends Component {
   render() {
     return (
@@ -8,4 +12,13 @@ export default class Home extends Component {
       </div>
     );
   }
+//     render() {
+//         return (
+//             <div className="home">
+//                 <AuthChasis />
+//                 <Landing />
+//                 <BottomNav />
+//             </div>
+//         );
+//     }
 }

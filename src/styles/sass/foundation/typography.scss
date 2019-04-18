@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 @mixin makeFont($defaultSize) {
     @media screen and (min-width:0px){
         font-size: ($defaultSize*3)/15; 

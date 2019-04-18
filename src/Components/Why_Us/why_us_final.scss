@@ -1,0 +1,35 @@
+.why_us {
+  font-family: Roboto, sans-serif;
+  min-height: 100vh;
+  padding: 2.5%;
+  font-weight: 100;
+  background-image: linear-gradient(
+    150deg,
+    #1a2b6d,
+    #503f8a,
+    #8155a6,
+    #b36bbf,
+    #e683d7,
+    #ff9ceb
+  );
+  &__card {
+    box-shadow: 0 0 15px white;
+    background-color: white;
+    width: 70vw;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  &__heading {
+    font-size: 25px;
+    padding: 10px;
+    padding-bottom: 5px;
+  }
+  &__text {
+    font-size: 16px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+}
