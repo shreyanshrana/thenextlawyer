@@ -4,7 +4,7 @@ import "./Services_Container.scss";
 const Services_Container = props => {
   return (
     <div className="dashboard__container">
-    <div className="display6">Create New</div>
+      <div className="display6">Create New</div>
       <div className="display8">Personal and Family</div>
       <div className="services___btn-container">
         <div className="py-2 px-3 col-6 float-left">
