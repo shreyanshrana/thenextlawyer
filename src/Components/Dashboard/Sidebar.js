@@ -43,7 +43,7 @@ class Sidebar extends Component {
         <div className="sidebar__container">
           <div className="sidebar__icon-container">
             <Link
-              to="/dashboard/services"
+              to="/dashboard"
               className={
                 this.state.services
                   ? "float-left col-12 display9 sidebar__option sidebar__icon-focussed"
@@ -58,7 +58,7 @@ class Sidebar extends Component {
               <span className="col-8 float-left">Create New Document</span>
             </Link>
             <Link
-              to="/dashboard/download-form"
+              to="/download-form"
               className={
                 this.state.downloads
                   ? "float-left col-12 display9 sidebar__option sidebar__icon-focussed"

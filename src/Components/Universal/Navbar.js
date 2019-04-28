@@ -36,7 +36,8 @@ class Navbar extends Component {
           </div>
 
           <div className="float-right">
-            <a className="nav-link navbar-login">Log-In</a>
+            <a className="nav-link navbar-login" onClick={ () => this.props.showAuth('login') }>Log-In</a>
+            <a className="nav-link navbar-login" onClick={ () => this.props.showAuth('register') }>Register</a>
           </div>
         </nav>
       </div>

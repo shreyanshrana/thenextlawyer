@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // import React, { Component } from "react";
 // import { Route } from "react-router-dom";
 // import Individuals from "./Individuals";
@@ -160,36 +160,13 @@
 //   //                 // Set Attire
 //   //                 // switch(view) {
 //   //                 //     case 'Rent_Agreement': {
-
+ 
 //   //                 //     }
 //   //                 // }
 //   //                 // Return Controller with Attire
 //   //                 return (<Controller service={view}/>)
 //   //             }
-//   //         }
-=======
-
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import Individuals from "./Individuals";
-import Advocates from "./Advocates";
-import NRIs from "./NRIs";
-import Companies from "./Companies";
-
-class Services extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <div className="services">
-          <Route path="/services/individuals" component={Individuals} />
-          <Route path="/services/advocates" component={Advocates} />
-          <Route path="/services/NRIs" component={NRIs} />
-          <Route path="/services/companies" component={Companies} />
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+//   //
 // import React, { Component } from 'react';
 // import { Route, Link } from 'react-router-dom';
 // // import Individuals from './Individuals';
@@ -374,274 +351,273 @@ class Services extends Component {
 //                                                 </div>
 //                                             </li>
 //                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('Will')} className='services-pane-options-element-hover-link'>
-//                                                     Will
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('Gift-Deed')} className='services-pane-options-element-hover-link'>
-//                                                     Gift Deed
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('Sale/Purchase of Vehicles')} className='services-pane-options-element-hover-link'>
-//                                                     Sale/Purchase of Vehicles
-//                                                 </div>
-//                                             </li>
-//                                         </ul>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             <div className='services-pane-options-box col col-lg-4 display8'>
-//                                 {/* Not the best way to send the target info tho */}
-//                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Advocates') }>
-//                                     Advocates
-//                                     <div className='services-pane-options-element-hover'>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             <div className='services-pane-options-box col col-lg-4 display8'>
-//                                 {/* Not the best way to send the target info tho */}
-//                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('NRIs') }>
-//                                     NRIs
-//                                     <div className='services-pane-options-element-hover'>
-//                                         <ul>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('GPA')} className='services-pane-options-element-hover-link'>
-//                                                     General Power of Attorney
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('SPA')} className='services-pane-options-element-hover-link'>
-//                                                     Speacial Power of Attorney
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('revocation')} className='services-pane-options-element-hover-link'>
-//                                                     Revocation of POA
-//                                                 </div>
-//                                             </li>
-//                                         </ul>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             <div className='services-pane-options-box col col-lg-4 display8'>
-//                                 {/* Not the best way to send the target info tho */}
-//                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Affidavits') }>
-//                                     Affidavits
-//                                     <div className='services-pane-options-element-hover'>
-//                                         <ul>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('name_change')} className='services-pane-options-element-hover-link'>
-//                                                     Name Change
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('nothirdpartyloss')} className='services-pane-options-element-hover-link'>
-//                                                     No Third Party Loss
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('dob')} className='services-pane-options-element-hover-link'>
-//                                                     Affidavit Regarding Age
-//                                                 </div>
-//                                             </li>
-//                                         </ul>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             <div className='services-pane-options-box col col-lg-4 display8'>
-//                                 {/* Not the best way to send the target info tho */}
-//                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Companies') }>
-//                                     Companies
-//                                     <div className='services-pane-options-element-hover'>
-//                                         <ul>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('NDA')} className='services-pane-options-element-hover-link'>
-//                                                     Non-Disclosure Agreement
-//                                                 </div>
-//                                             </li>
-//                                             <li className='display10'>
-//                                                 <div onClick={() => this.moveToService('employment')} className='services-pane-options-element-hover-link'>
-//                                                     Employeement Contract
-//                                                 </div>
-//                                             </li>
-//                                         </ul>
-//                                     </div>    
-//                                 </div>
-//                             </div>
-//                             <div className='services-pane-options-box col col-lg-4 display8'>
-//                                 {/* Not the best way to send the target info tho */}
-//                                 <div className='services-pane-options-element display8' onMouseEnter={ () => this.mouseHoverHandler('Miscellanous') }>
-//                                     Miscellenous
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className='services-pane-carousel'>
+//                                                  <div onClick={() => this.moveToService('Will')} className='services-pane-options-element-hover-link'>
+//                                                      Will
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('Gift-Deed')} className='services-pane-options-element-hover-link'>
+//                                                      Gift Deed
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('Sale/Purchase of Vehicles')} className='services-pane-options-element-hover-link'>
+//                                                      Sale/Purchase of Vehicles
+//                                                  </div>
+//                                              </li>
+//                                          </ul>
+//                                      </div>
+//                                  </div>
+//                              </div>
+//                              <div className='services-pane-options-box col col-lg-4 display8'>
+//                                  {/* Not the best way to send the target info tho */}
+//                                  <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Advocates') }>
+//                                      Advocates
+//                                      <div className='services-pane-options-element-hover'>
+//                                      </div>
+//                                  </div>
+//                              </div>
+//                              <div className='services-pane-options-box col col-lg-4 display8'>
+//                                  {/* Not the best way to send the target info tho */}
+//                                  <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('NRIs') }>
+//                                      NRIs
+//                                      <div className='services-pane-options-element-hover'>
+//                                          <ul>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('GPA')} className='services-pane-options-element-hover-link'>
+//                                                      General Power of Attorney
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('SPA')} className='services-pane-options-element-hover-link'>
+//                                                      Speacial Power of Attorney
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('revocation')} className='services-pane-options-element-hover-link'>
+//                                                      Revocation of POA
+//                                                  </div>
+//                                              </li>
+//                                          </ul>
+//                                      </div>
+//                                  </div>
+//                              </div>
+//                              <div className='services-pane-options-box col col-lg-4 display8'>
+//                                  {/* Not the best way to send the target info tho */}
+//                                  <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Affidavits') }>
+//                                      Affidavits
+//                                      <div className='services-pane-options-element-hover'>
+//                                          <ul>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('name_change')} className='services-pane-options-element-hover-link'>
+//                                                      Name Change
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('nothirdpartyloss')} className='services-pane-options-element-hover-link'>
+//                                                      No Third Party Loss
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('dob')} className='services-pane-options-element-hover-link'>
+//                                                      Affidavit Regarding Age
+//                                                  </div>
+//                                              </li>
+//                                          </ul>
+//                                      </div>
+//                                  </div>
+//                              </div>
+//                              <div className='services-pane-options-box col col-lg-4 display8'>
+//                                  {/* Not the best way to send the target info tho */}
+//                                  <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Companies') }>
+//                                      Companies
+//                                      <div className='services-pane-options-element-hover'>
+//                                          <ul>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('NDA')} className='services-pane-options-element-hover-link'>
+//                                                      Non-Disclosure Agreement
+//                                                  </div>
+//                                              </li>
+//                                              <li className='display10'>
+//                                                  <div onClick={() => this.moveToService('employment')} className='services-pane-options-element-hover-link'>
+//                                                      Employeement Contract
+//                                                  </div>
+//                                              </li>
+//                                          </ul>
+//                                      </div>    
+//                                  </div>
+//                              </div>
+//                              <div className='services-pane-options-box col col-lg-4 display8'>
+//                                  {/* Not the best way to send the target info tho */}
+//                                  <div className='services-pane-options-element display8' onMouseEnter={ () => this.mouseHoverHandler('Miscellanous') }>
+//                                      Miscellenous
+//                                  </div>
+//                              </div>
+//                          </div>
+//                          <div className='services-pane-carousel'>
 
-//                         </div>
-//                         <div className='services-pane-options services-pane-options-misc'>
+//                          </div>
+//                          <div className='services-pane-options services-pane-options-misc'>
 
-//                         </div>
-//                     </div>
-//                     {controller()}
-//                 </div>
-//             </React.Fragment>
-//         )
-//     }
-// }
->>>>>>> f6b84feb7af41424fe59e5a72336ffd223023937
+//                          </div>
+//                      </div>
+//                      {controller()}
+//                  </div>
+//              </React.Fragment>
+//          )
+//      }
+//  }
 
-//   //         return(
-//   //             <React.Fragment>
-//   //                 <div className = 'services'>
-//   //                     <Header />
-//   //                     <div className='services-pane'>
-//   //                         {/* Gotta do something better than routing */}
-//   //                         {/* <Route path = '/services/individuals' component = { Individuals } />
-//   //                         <Route path = '/services/advocates' component = { Advocates } />
-//   //                         <Route path = '/services/NRIs' component = { NRIs } />
-//   //                         <Route path = '/services/companies' component = { Companies } /> */}
-//   //                         <div className='services-pane-head display6'>
-//   //                             <span className='services-pane-head-main'>Our Services</span> <span className={'services-pane-head-dynamic services-pane-head-dynamic-' + this.state.category + ' display6' }>{this.state.subheading}</span>
-//   //                         </div>
-//   //                         {/* Add Grow functionality */}
-//   //                         {/* <Grow in = {false}> */}
-//   //                         {service()}
-//   //                         {/* </Grow> */}
-//   //                         <div className='services-pane-options'>
-//   //                             <div className='services-pane-options-box col col-lg-4 display8'>
-//   //                                 {/* Not the best way to send the target info tho */}
-//   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Individuals') }>
-//   //                                     Individuals
-//   //                                     <div className='services-pane-options-element-hover'>
-//   //                                         <ul>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('Rent-Agreement')} className='services-pane-options-element-hover-link'>
-//   //                                                     Rent Agreement
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('Marriage-Registeration')} className='services-pane-options-element-hover-link'>
-//   //                                                     Marriage Registeration
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('Will')} className='services-pane-options-element-hover-link'>
-//   //                                                     Will
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('Gift-Deed')} className='services-pane-options-element-hover-link'>
-//   //                                                     Gift Deed
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('Sale/Purchase of Vehicles')} className='services-pane-options-element-hover-link'>
-//   //                                                     Sale/Purchase of Vehicles
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                         </ul>
-//   //                                     </div>
-//   //                                 </div>
-//   //                             </div>
-//   //                             <div className='services-pane-options-box col col-lg-4 display8'>
-//   //                                 {/* Not the best way to send the target info tho */}
-//   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Advocates') }>
-//   //                                     Advocates
-//   //                                     <div className='services-pane-options-element-hover'>
-//   //                                     </div>
-//   //                                 </div>
-//   //                             </div>
-//   //                             <div className='services-pane-options-box col col-lg-4 display8'>
-//   //                                 {/* Not the best way to send the target info tho */}
-//   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('NRIs') }>
-//   //                                     NRIs
-//   //                                     <div className='services-pane-options-element-hover'>
-//   //                                         <ul>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('GPA')} className='services-pane-options-element-hover-link'>
-//   //                                                     General Power of Attorney
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('SPA')} className='services-pane-options-element-hover-link'>
-//   //                                                     Speacial Power of Attorney
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('revocation')} className='services-pane-options-element-hover-link'>
-//   //                                                     Revocation of POA
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                         </ul>
-//   //                                     </div>
-//   //                                 </div>
-//   //                             </div>
-//   //                             <div className='services-pane-options-box col col-lg-4 display8'>
-//   //                                 {/* Not the best way to send the target info tho */}
-//   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Affidavits') }>
-//   //                                     Affidavits
-//   //                                     <div className='services-pane-options-element-hover'>
-//   //                                         <ul>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('name_change')} className='services-pane-options-element-hover-link'>
-//   //                                                     Name Change
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('nothirdpartyloss')} className='services-pane-options-element-hover-link'>
-//   //                                                     No Third Party Loss
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('dob')} className='services-pane-options-element-hover-link'>
-//   //                                                     Affidavit Regarding Age
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                         </ul>
-//   //                                     </div>
-//   //                                 </div>
-//   //                             </div>
-//   //                             <div className='services-pane-options-box col col-lg-4 display8'>
-//   //                                 {/* Not the best way to send the target info tho */}
-//   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Companies') }>
-//   //                                     Companies
-//   //                                     <div className='services-pane-options-element-hover'>
-//   //                                         <ul>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('NDA')} className='services-pane-options-element-hover-link'>
-//   //                                                     Non-Disclosure Agreement
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                             <li className='display10'>
-//   //                                                 <div onClick={() => this.moveToService('employment')} className='services-pane-options-element-hover-link'>
-//   //                                                     Employeement Contract
-//   //                                                 </div>
-//   //                                             </li>
-//   //                                         </ul>
-//   //                                     </div>
-//   //                                 </div>
-//   //                             </div>
-//   //                             <div className='services-pane-options-box col col-lg-4 display8'>
-//   //                                 {/* Not the best way to send the target info tho */}
-//   //                                 <div className='services-pane-options-element display8' onMouseEnter={ () => this.mouseHoverHandler('Miscellanous') }>
-//   //                                     Miscellenous
-//   //                                 </div>
-//   //                             </div>
-//   //                         </div>
-//   //                         <div className='services-pane-carousel'>
+//             return(
+//    //             <React.Fragment>
+// //   //                 <div className = 'services'>
+// //   //                     <Header />
+// //   //                     <div className='services-pane'>
+// //   //                         {/* Gotta do something better than routing */}
+// //   //                         {/* <Route path = '/services/individuals' component = { Individuals } />
+// //   //                         <Route path = '/services/advocates' component = { Advocates } />
+// //   //                         <Route path = '/services/NRIs' component = { NRIs } />
+// //   //                         <Route path = '/services/companies' component = { Companies } /> */}
+// //   //                         <div className='services-pane-head display6'>
+// //   //                             <span className='services-pane-head-main'>Our Services</span> <span className={'services-pane-head-dynamic services-pane-head-dynamic-' + this.state.category + ' display6' }>{this.state.subheading}</span>
+// //   //                         </div>
+// //   //                         {/* Add Grow functionality */}
+// //   //                         {/* <Grow in = {false}> */}
+// //   //                         {service()}
+// //   //                         {/* </Grow> */}
+// //   //                         <div className='services-pane-options'>
+// //   //                             <div className='services-pane-options-box col col-lg-4 display8'>
+// //   //                                 {/* Not the best way to send the target info tho */}
+// //   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Individuals') }>
+// //   //                                     Individuals
+// //   //                                     <div className='services-pane-options-element-hover'>
+// //   //                                         <ul>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('Rent-Agreement')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Rent Agreement
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('Marriage-Registeration')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Marriage Registeration
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('Will')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Will
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('Gift-Deed')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Gift Deed
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('Sale/Purchase of Vehicles')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Sale/Purchase of Vehicles
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                         </ul>
+// //   //                                     </div>
+// //   //                                 </div>
+// //   //                             </div>
+// //   //                             <div className='services-pane-options-box col col-lg-4 display8'>
+// //   //                                 {/* Not the best way to send the target info tho */}
+// //   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Advocates') }>
+// //   //                                     Advocates
+// //   //                                     <div className='services-pane-options-element-hover'>
+// //   //                                     </div>
+// //   //                                 </div>
+// //   //                             </div>
+// //   //                             <div className='services-pane-options-box col col-lg-4 display8'>
+// //   //                                 {/* Not the best way to send the target info tho */}
+// //   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('NRIs') }>
+// //   //                                     NRIs
+// //   //                                     <div className='services-pane-options-element-hover'>
+// //   //                                         <ul>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('GPA')} className='services-pane-options-element-hover-link'>
+// //   //                                                     General Power of Attorney
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('SPA')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Speacial Power of Attorney
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('revocation')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Revocation of POA
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                         </ul>
+// //   //                                     </div>
+// //   //                                 </div>
+// //   //                             </div>
+// //   //                             <div className='services-pane-options-box col col-lg-4 display8'>
+// //   //                                 {/* Not the best way to send the target info tho */}
+// //   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Affidavits') }>
+// //   //                                     Affidavits
+// //   //                                     <div className='services-pane-options-element-hover'>
+// //   //                                         <ul>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('name_change')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Name Change
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('nothirdpartyloss')} className='services-pane-options-element-hover-link'>
+// //   //                                                     No Third Party Loss
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('dob')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Affidavit Regarding Age
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                         </ul>
+// //   //                                     </div>
+// //   //                                 </div>
+// //   //                             </div>
+// //   //                             <div className='services-pane-options-box col col-lg-4 display8'>
+// //   //                                 {/* Not the best way to send the target info tho */}
+// //   //                                 <div className='services-pane-options-element' onMouseEnter={ () => this.mouseHoverHandler('Companies') }>
+// //   //                                     Companies
+// //   //                                     <div className='services-pane-options-element-hover'>
+// //   //                                         <ul>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('NDA')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Non-Disclosure Agreement
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                             <li className='display10'>
+// //   //                                                 <div onClick={() => this.moveToService('employment')} className='services-pane-options-element-hover-link'>
+// //   //                                                     Employeement Contract
+// //   //                                                 </div>
+// //   //                                             </li>
+// //   //                                         </ul>
+// //   //                                     </div>
+// //   //                                 </div>
+// //   //                             </div>
+// //   //                             <div className='services-pane-options-box col col-lg-4 display8'>
+// //   //                                 {/* Not the best way to send the target info tho */}
+// //   //                                 <div className='services-pane-options-element display8' onMouseEnter={ () => this.mouseHoverHandler('Miscellanous') }>
+// //   //                                     Miscellenous
+// //   //                                 </div>
+// //   //                             </div>
+// //   //                         </div>
+// //   //                         <div className='services-pane-carousel'>
 
-//   //                         </div>
-//   //                         <div className='services-pane-options services-pane-options-misc'>
+// //   //                         </div>
+// //   //                         <div className='services-pane-options services-pane-options-misc'>
 
-//   //                         </div>
-//   //                     </div>
-//   //                     {controller()}
-//   //                 </div>
-//   //             </React.Fragment>
-//   //         )
-//   //     }
-// }
+// //   //                         </div>
+// //   //                     </div>
+// //   //                     {controller()}
+// //   //                 </div>
+// //   //             </React.Fragment>
+// //   //         )
+// //   //     }
+// // }
 
-// export default Services;
+// // export default Services;

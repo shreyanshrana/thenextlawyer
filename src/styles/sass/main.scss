@@ -18,3 +18,317 @@
 
 // Mobile Optimization
 @import './ot/mobile';
+
+* {
+}
+
+#login {
+}
+
+#login .form-wrap {
+    width: 30%;
+    margin: 0 auto;
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
+}
+#login h1 {
+    color: #19A0F8;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+#login .form-group {
+    margin-bottom: 25px;
+}
+#login .checkbox {
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.show {
+    background-color: #19A0F8;
+    -webkit-box-shadow: inset 0px 0px 31px 0px rgba(220,220,220,0.25);
+    -moz-box-shadow: inset 0px 0px 31px 0px rgba(220,220,220,0.25);
+    box-shadow: inset 0px 0px 31px 0px rgba(220,220,220,0.25);
+    // content: '\e013';
+    // color: #19A0F8;
+    // background-color: #19A0F8;
+    // font-size: 17px;
+    // margin: 1px 0 0 3px;
+    // position: absolute;
+    // pointer-events: none;
+    // font-family: 'Glyphicons Halflings';
+}
+#login .checkbox .character-checkbox {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    display: inline-block;
+}
+#login .checkbox .label {
+    padding-left: 0.45vw;
+    color: #6d6d6d;
+    font-size: 13px;
+    font-weight: normal;
+}
+#login .btn.btn-custom {
+    font-size: 14px;
+	margin-bottom: 20px;
+}
+#login .forget {
+    font-size: 13px;
+	text-align: center;
+	display: block;
+}
+
+/*    --------------------------------------------------
+	:: Inputs & Buttons
+	-------------------------------------------------- */
+.form-control {
+    color: #212121;
+}
+.btn-custom {
+    color: #fff;
+	background-color: #19A0F8;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+    color: #fff;
+}
+
+/*    --------------------------------------------------
+    :: Footer
+	-------------------------------------------------- */
+#footer {
+    color: #6d6d6d;
+    font-size: 12px;
+    text-align: center;
+}
+#footer p {
+    margin-bottom: 0;
+}
+#footer a {
+    color: inherit;
+}
+
+.authbox-login, .authbox-register {
+    z-index: 1000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    // height: 100vh;
+    background-color: rgba($color: #ffffff, $alpha: 0.90);
+    padding: 5vh;
+    // padding-top: 32vh;
+}
+
+.services {
+    width: 100%;
+    height: 100vh;
+    background-color: #19A0F8;
+    &-module {
+        height: 80%;
+        width: 100%;
+        animation: simple-fade-in 2s;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        background-color: white;
+        transform: translateY(-50%);
+        &-questions {
+            width: 100%;
+            padding-top: 2.5vh;
+            text-align: center;
+            &-heading {
+                color: #19A0F8;
+                font-size: 2rem;
+                // text-shadow: 0.1rem 0.1rem 1rem black;
+            }
+            &-element {
+                display: block;
+                // margin-left: 11vw;
+                margin: 0.5rem;
+                text-align: center;
+                &-radiogroup{
+                    // left: 22.5%;
+                    width: 60%;
+                    // padding: 1rem;
+                    text-align: center;
+                    margin: auto;
+                    padding: 1.25rem;
+                    padding-left: 10%;
+                    position: relative;
+                    align-content: center;
+                    // top: 50%;
+                    // position: absolute;
+                    // background-color: yellow;
+                    // width: 100%;
+                    // background-color: white;
+                    // display: inline-block;
+                    // padding: 2rem;
+                    // white-space: nowrap;
+                    @media screen and (max-width: 1440px) {
+                        width: 85%;
+                        // padding-left: 6rem;
+                    }
+                    @media screen and (max-width: 1280px) {
+                        width: 100%;
+                        // padding-left: 9rem;
+                    }
+                    @media screen and (max-width: 1080px) {
+                        width: 120%;
+                        padding-left: 5rem;
+                    }
+                }
+                &-radio{
+                    // width: 10vw;
+                    // background-color: #19A0F8;
+                    padding: 0.5rem;
+                    border-radius: 1rem;
+                    padding-right: 2rem;
+                    margin-left: 2rem !important;
+                    margin-right: 2rem !important;
+                    display: inline-block;
+                    box-shadow: 0rem 0.35rem 1rem 0.15rem #666;
+                    background-color: white;
+                    // background-color: green;
+                    & span {
+                        font-size: 1.2rem;
+                    }
+                }
+                // background-color: #0A4CCE;
+                .test-text {
+                    border-radius: 0.5rem;
+                    box-shadow: 0rem 0.35rem 1rem 0.15rem #666;
+                    & fieldset{
+                        border-radius: 0.5rem;
+                        border-color: white;
+                        background-color: white;
+                        // padding-left: 3rem;
+                    }
+                    & label {
+                        font-size: 1.25rem;
+                    }
+                    // background-color: white;
+                }
+            }
+        }
+        &-seekcontrols {
+            padding: 0 30%;
+            &-btn-arr {
+                padding-top: 2vh;
+                text-align: end;
+            }
+             &-btn{
+                text-decoration: none;
+                border: none;
+                color: grey;
+                background-color: white;
+                border-radius: 0.25rem;
+                box-shadow: 0rem 0.35rem 1rem 0.15rem #666;
+                cursor: pointer;
+                padding: 0.5rem 1.25rem;
+                &-next {
+                    // margin-top: 5rem;
+                    // background-image: linear-gradient( 135deg, #6AFF98, #18EAE9 );
+                    background-color: #19A0F8;
+                    margin-left: 1.25vw;
+                    color: white;
+                }
+                &-back {
+                    // margin-left: 30vw;
+                    background-color: #19A0F8;
+                    color: white;
+                    // background-image: linear-gradient( 135deg, #6AFF98, #18EAE9 );
+                }
+            }
+        }
+    }
+}
+
+#standard-with-placeholder {
+    width: 30vw;
+    height: 4vh;
+    font-size: 1.25rem;
+    padding-left: 2rem;
+    // background-color: white;
+    // border-radius: 10rem;
+    // background-color: rgba($color: #fff, $alpha: 0.55);
+    // border-top: solid white 1rem;
+    // position: relative;
+    z-index: 100;
+    & .three-fourth-field{
+        width: 20vw !important;
+    }
+}
+
+.interview{
+    &-overlay{
+        &-end{
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 1000;
+            background-color: rgba($color: #fff, $alpha: 0.55);
+            padding: 25vh 25vw;;
+            &-content{
+                height: 100%;
+                width: 100%;
+                z-index: 1001;
+                box-shadow: 0rem 2rem 5rem #666;
+                background-color: white;
+                border-radius: 1rem;
+                padding: 2rem;
+                &-title {
+                    color: grey;
+                }
+                &-restart {
+                    margin-top: 2vh;
+                    color: grey;
+                    &-specific {
+                    }
+                }
+                &-files {
+                    height: 30vh;
+                    &-pdf{
+                        padding-top: 5vh;
+                        display: inline-block;
+                        // background-color: red;
+                        width: 50%;
+                        height: 100%;
+                    }
+                    &-docx{
+                        padding-top: 5vh;
+                        display: inline-block;
+                        // background-color: blue;
+                        width: 50%;
+                        height: 100%;
+                    }
+                    &-icon{
+                        height: 15vh;
+                    }
+                    &-link {
+                        color: cornflowerblue;
+                        margin-top: 1rem;
+                    }
+                    &-text{
+                    }
+                    // background-color: red;
+                }
+            }
+        }
+    }
+}
