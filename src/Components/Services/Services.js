@@ -1,178 +1,7 @@
-<<<<<<< HEAD
-// import React, { Component } from "react";
-// import { Route } from "react-router-dom";
-// import Individuals from "./Individuals";
-// import Advocates from "./Advocates";
-// import NRIs from "./NRIs";
-// import Companies from "./Companies";
-
-// class Services extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <div className="services">
-//           <Route path="/services/individuals" component={Individuals} />
-//           <Route path="/services/advocates" component={Advocates} />
-//           <Route path="/services/NRIs" component={NRIs} />
-//           <Route path="/services/companies" component={Companies} />
-//         </div>
-//       </React.Fragment>
-//     );
-//   }
-//   // import React, { Component } from 'react';
-//   // import { Route, Link } from 'react-router-dom';
-//   // // import Individuals from './Individuals';
-//   // // import NRIs from './NRIs';
-//   // // import Companies from './Companies';
-//   // import Header from '../Header';
-
-//   // // Material UI
-//   // import Grow from '@material-ui/core/Grow';
-//   // import ServiceModule from './ServiceModule';
-//   // import Controller from '../Controller';
-
-//   // class Services extends Component {
-
-//   //     state = {
-//   //         serivces: {},
-//   //         mode: null,
-//   //         view: null,
-//   //         category: null,
-//   //         subheading: null,
-//   //     }
-
-//   //     componentWillMount = () => {
-//   //         var services = {}
-//   //         services.heading = 'Our Services';
-//   //         this.setState({
-//   //             services: services
-//   //         })
-//   //     }
-
-//   //     mouseHoverHandler = (panel) => {
-//   //         console.log('Moving over ', panel);
-//   //         this.setState({
-//   //             category: panel
-//   //         })
-//   //         // Possible UX extensions
-//   //         // Achiveing by CSS for now
-//   //     }
-
-//   //     moveToService = (service) => {
-//   //         switch(service) {
-//   //             case 'Rent-Agreement': {
-//   //                 console.log('Going to Service: Rent Agreement');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'Rent_Agreement',
-//   //                     mode: 'service',
-//   //                     subheading: 'Rent Agreement'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'Marriage-Registeration': {
-//   //                 console.log('Going to Service: Marriage');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'marriage_registeration',
-//   //                     mode: 'service'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'Will': {
-//   //                 console.log('Going to Service: Will');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'Will',
-//   //                     mode: 'service'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'Gift-Deed': {
-//   //                 console.log('Going to Service: Gift-Deed');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'gift',
-//   //                     mode: 'service'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'Sale/Purchase of Vehicles': {
-//   //                 console.log('Going to Service: Sale/Purchase of Vehicles');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'salepurch',
-//   //                     mode: 'service'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'SPA': {
-//   //                 console.log('Going to Service: Speacial Power of Attorney');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'SPA',
-//   //                     mode: 'service',
-//   //                     subheading: 'Speacial Power of Attorney'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'GPA': {
-//   //                 console.log('Going to Service: General Power of Attorney');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'GPA',
-//   //                     mode: 'service',
-//   //                     subheading: 'General Power of Attorney'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             case 'revocation': {
-//   //                 console.log('Going to Service: Revocation of POA');
-//   //                 this.setState({
-//   //                     // This name has to Exactly match the form file name (.yml) one
-//   //                     view: 'revocation',
-//   //                     mode: 'service',
-//   //                     subheading: 'Revocation of POA'
-//   //                 });
-//   //                 break;
-//   //             }
-//   //             default : {
-//   //                 throw new Error('Error selecting the current service, Please try again');
-//   //             }
-//   //         }
-//   //     }
-
-//   //     componentDidUpdate = () => {
-//   //         console.log('The state has been updated with: ', this.state);
-//   //     }
-
-//   //     render() {
-
-//   //         const { mode, view, category } = this.state;
-
-//   //         function service () {
-//   //             if (mode === 'service' && view != null) return (<ServiceModule category = { category } service = { view } />)
-//   //         }
-
-//   //         function controller () {
-//   //             if (mode === 'service'){
-//   //                 var attire = {}
-//   //                 // Set Attire
-//   //                 // switch(view) {
-//   //                 //     case 'Rent_Agreement': {
-
-//   //                 //     }
-//   //                 // }
-//   //                 // Return Controller with Attire
-//   //                 return (<Controller service={view}/>)
-//   //             }
-//   //         }
-=======
-
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Individuals from "./Individuals";
-import Advocates from "./Advocates";
+// import Advocates from "./Advocates";
 import NRIs from "./NRIs";
 import Companies from "./Companies";
 
@@ -182,7 +11,7 @@ class Services extends Component {
       <React.Fragment>
         <div className="services">
           <Route path="/services/individuals" component={Individuals} />
-          <Route path="/services/advocates" component={Advocates} />
+          // <Route path="/services/advocates" component={Advocates} />
           <Route path="/services/NRIs" component={NRIs} />
           <Route path="/services/companies" component={Companies} />
         </div>
@@ -203,7 +32,7 @@ class Services extends Component {
 // import Controller from '../Controller';
 
 // class Services extends Component {
-    
+
 //     state = {
 //         serivces: {},
 //         mode: null,
@@ -318,7 +147,7 @@ class Services extends Component {
 //     }
 
 //     render() {
-        
+
 //         const { mode, view, category } = this.state;
 
 //         function service () {
@@ -331,7 +160,7 @@ class Services extends Component {
 //                 // Set Attire
 //                 // switch(view) {
 //                 //     case 'Rent_Agreement': {
-                        
+
 //                 //     }
 //                 // }
 //                 // Return Controller with Attire
@@ -467,7 +296,7 @@ class Services extends Component {
 //                                                 </div>
 //                                             </li>
 //                                         </ul>
-//                                     </div>    
+//                                     </div>
 //                                 </div>
 //                             </div>
 //                             <div className='services-pane-options-box col col-lg-4 display8'>
@@ -490,7 +319,6 @@ class Services extends Component {
 //         )
 //     }
 // }
->>>>>>> f6b84feb7af41424fe59e5a72336ffd223023937
 
 //   //         return(
 //   //             <React.Fragment>

@@ -51,7 +51,6 @@ class App extends Component {
 // //  Add a form Edit and Delete Accorind to Backend
 
 // // Import Stylesheet (Custom)
-=======
 /*import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 // Primary Components 
@@ -69,7 +68,6 @@ import Dashboard from './Components/Dashboard';
 
 /***** Truncate prior to final deploy *******/
 // Testing or To-Be-Integrated Components
-
 
 // Maintainance Components
 // Dynamic Linking to Backend probably
@@ -122,48 +120,44 @@ import Dashboard from './Components/Dashboard';
 //                         <Switch>
 //                             {/*  */}
 //                             {/* {this.state.isLoggedIn && <Redirect from='/' to='/services' exact />} */}
-    // state = {
-    //     email: null,
-    //     id: null,
-    //     name: null,
-    //     secret: null,
-    //     password: null,
-    //     isLoggedIn: false
-    // }
+// state = {
+//     email: null,
+//     id: null,
+//     name: null,
+//     secret: null,
+//     password: null,
+//     isLoggedIn: false
+// }
 
-    // login = (email, id, name, password, secret) => {
-    //     console.log('Now logged in with the status: ', secret);
-    //     this.setState({
-    //         isLoggedIn: true,
-    //         email: email,
-    //         id: id,
-    //         name: name,
-    //         secret: secret,
-    //         password: password,
-    //     })
-    // }
+// login = (email, id, name, password, secret) => {
+//     console.log('Now logged in with the status: ', secret);
+//     this.setState({
+//         isLoggedIn: true,
+//         email: email,
+//         id: id,
+//         name: name,
+//         secret: secret,
+//         password: password,
+//     })
+// }
 
-    // logout = () => {
-    //     this.setState({
-    //         email: null,
-    //         name: null,
-    //         id: null,
-    //         secret: null,
-    //         password: null,
-    //         isLoggedIn: false
-    //     })
-    // }
-  
-    /*render() {
-        return (
-            <React.Fragment>
-                {/* Main Router for the App */}
-               // <BrowserRouter>
-                    {/* Browser Router can only have one child */}
-                    //<React.Fragment>
-                        //<Switch>
-                            {/*  */}
-                            {/* {this.state.isLoggedIn && <Redirect from='/' to='/services' exact />} */}
+// logout = () => {
+//     this.setState({
+//         email: null,
+//         name: null,
+//         id: null,
+//         secret: null,
+//         password: null,
+//         isLoggedIn: false
+//     })
+// }
+
+// render() {
+// return (
+// <React.Fragment>
+// <BrowserRouter>
+//<React.Fragment>
+//<Switch>
 //                             <Route exact path="/" component={Home} />
 //                             <Route path="/services" component={Services} />
 //                             <Route path="/contactus" component={Contact} />

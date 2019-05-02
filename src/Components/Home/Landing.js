@@ -25,7 +25,7 @@ const Landing = props => {
         <div className="display8 text-center p-3">
           Some of our popular services.
         </div>
-        <div className="col-6 float-left landing__services--button">
+        <div className="col-lg-6 col-xs-12 float-left landing__services--button">
           <a href="" className="btn btn-primary col-12">
             Service 1
           </a>
