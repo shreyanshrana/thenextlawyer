@@ -8,10 +8,17 @@ body {
     left: 50%;
     display: inline-block;
     top: 10%;
+    @media screen and (max-width: 600px) {
+      top: 5%;
+    }
     transform: translate(-50%, -50%);
   }
   &input {
     width: 900px;
+
+    @media screen and (max-width: 600px) {
+      width: 90vw;
+    }
     //   height: 90px;
     padding: 10px 30px;
     color: black;

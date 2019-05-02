@@ -2,282 +2,337 @@
 import React, { Component } from 'react'
 
 // To Communicate with the docassemble API
-import Axios from 'axios';
+import Axios from 'axios'
 
 // Material-UI Forms
-import TextField from '@material-ui/core/TextField';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import TextField from '@material-ui/core/TextField'
+import Radio from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import FormHelperText from '@material-ui/core/FormHelperText'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 // Auth Context
 
 // Import the loader
-import Container from '../Utilities/Loader';
+import Container from '../Utilities/Loader'
 
 export default class ServiceModule extends Component {
     
     state = {
-        view: null,
         steps: null,
         progress: 0,
-        active: null,
-        formSum: [],
+        active: null,   
         questions: [],
-        setvars: {},
-        vars: [],
-        types: [],
-        options: [],
-        currentForm: [],
+        question: null,
         sessionId: null,
         secret: null,
         service: null,
-        category: null,
         isValid: null,
         questionPayload: {},
         file: {},
+        iterator: null,
         end: false,
         loading: true
     }
 
     componentWillMount = () => {
-        console.log('Props before the state set.....', this.props.service);
+        console.log('Props before the state set.....', this.props.location.state.service)
         this.setState({
-            view: this.props.service,
-            service: this.props.service,
-            category: this.props.category,
-        });
-        console.log('state set as', this.state);
-        // if(this.context.isLoggedIn) this.getSessionID();
-        // else this.getForm();
-        this.getForm();
+            service: this.props.location.state.service,
+        })
+        console.log('state set as', this.state)
     }
+
+    componentDidMount = () => {
+        this.getForm()
+    }
+
+
 
     // Start an interview
     // Set Class Nomenclature henceforth //ALPHA
-    getSessionID = () => {
-        var prevSess = [];
-        // Get all the previous Sessions
-        Axios.get(
-            'https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/user/' + this.context.id + '/interviews?key=V9P61G3EGKFI11LOG4G25F6UQZHSFR0B'
-        ).then(res_one => {
-            console.log('Recieved the previous sessions as: ', res_one);
-            res_one.data.map( sess => {
-                prevSess.push(sess.session);
-            });
-            // Perform this request
-            var bodyFormData = new FormData();
-            bodyFormData.set('key', 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B');
-            bodyFormData.set('i', 'docassemble.playground1:salepurch.yml');
-            bodyFormData.set('username', this.context.email);
-            bodyFormData.set('password', this.context.password);
-            Axios.post(
-                'https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/login_url', bodyFormData    
-            ).then( res_two => {
-                console.log(res_two.data);
-                // window.open(res_two.data);
-                fetch(
-                    res_two.data
-                ).then( resp_json => {
-                    console.log('JSON', resp_json)
-                    console.log('Success creating a new session for this user....', res_two);
-                    Axios.get(
-                        'https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/user/' + this.context.id + '/interviews?key=V9P61G3EGKFI11LOG4G25F6UQZHSFR0B'
-                    ).then(res_three => {
-                        console.log('Recieved the previous sessions as: ', res_three);
-                        res_three.data.map( sess => {
-                            var flag = false;
-                            prevSess.map( pSess => {
-                                if ( sess == pSess ){
-                                    console.log('MUST');
-                                }
-                            });
-                            if(!flag) {
-                                console.log('Success estabilishing the session', sess);
-                                this.setState({
-                                    sessionId: sess,
-                                    // Settle the secret here itself too
-                                    secret: this.context.secret
-                                });
-                            }
-                        });
-                        this.getQuestions();
-                    }).catch(err => {
-                        console.log('Error getting the previous sessions: ', err);
-                    });
-                }).catch((err) => {
-                    console.log('Error: ', err);
-                });
-            }).catch( err => {
-                console.log('Error creating a new session for this user....', err);
-            });
-        }).catch(err => {
-            console.log('Error getting the previous sessions: ', err);
-        })
-    }
 
     getForm = () => {
         // Get all the form fields for the particular form
-        console.log('State before the call: ', this.state);
+        console.log('State before the call: ', this.state)
         Axios.get('https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/session/new', { 
             params: {
                 'key': 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B',
-                'i': 'docassemble.playground1:' + this.props.service + '.yml'
+                'i': 'docassemble.playground1:' + this.state.service + '.yml'
             }
         }).then((res) => {
-            console.log('Recieved response: ', res);
+            console.log('Recieved response: ', res)
             this.setState({
-                sessionId: res.data.session,
+                sessionId: res.data.session
             })
             // Rogue Form
             if(!this.state.secret) {
                 this.setState({
-                    secret: res.data.secret,
+                    secret: res.data.secret
                 })
             }
-            this.getQuestions();
+            this.getQuestions()
         }).catch((err) => {
-            console.log('Error getting the Service from the Server', err);
-            throw new Error('Error getting the Service from the Server', err);
-        });
+            console.log('Error getting the Service from the Server', err)
+            throw new Error('Error getting the Service from the Server', err)
+        })
     }
 
 
     // Get the Active form questions
     getQuestions = () => {
         if (this.state.sessionId) {
-            console.log('Questions vaali state: ', this.state);
+            console.log('Questions vaali state: ', this.state)
             Axios.get(
                 'https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/session/question', {
                     params: {
-                        "key": "V9P61G3EGKFI11LOG4G25F6UQZHSFR0B",
-                        "i": "docassemble.playground1:" + this.state.service + ".yml",
-                        "session": this.state.sessionId,
-                        "secret": this.state.secret,
+                        'key': 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B',
+                        'i': 'docassemble.playground1:' + this.state.service + '.yml',
+                        // 'i': 'docassemble.playground1:' + this.state.service + '.yml',
+                        'session': this.state.sessionId,
+                        'secret': this.state.secret
                     },
             }).then(res => {
-                console.log('Questions: ', res);
-                var questions = [];
-                var vars = [];
-                var types = [];
-                var options = [];
-
+                // If last question asked last was the last question of the interview
+                console.log('Questions: ', res)
+                if(this.state.question && this.state.question.mode == 'boolean' && res.data.fields[0].datatype == 'boolean') {
+                    // Iterate
+                }
+                var question = new QuestionModule()
+                question.qtHead = res.data.questionText
+                var questions = []
+                var vars = []
+                var types = []
+                var options = []
+                var careHandle = null
+                question.setvars = {} // initialise setvars to be an array for later
                 if((res.data.fields[0].choices != undefined) && res.data.fields[0].choices[0].label === 'Restart') {
                     // Interview has ended
                     this.displayEndFile(res.data)
                 }
+                else if (res.data.fields[0].datatype == 'boolean') {
+                    question.mode = 'Iterative'
+                    var variable = res.data.fields[0].variable_name
+                    vars.push(variable)
+                    var opta = []
+                    opta.push('yes')
+                    opta.push('no')
+                    options.push(opta)
+                    types.push('choice')
+                    question.questions = questions
+                    question.vars = vars
+                    question.types = types
+                    question.options = options
+                    if(!this.state.iterator) this.setState({question, iterator: 0})
+                    else this.setState({question})
+                }
                 else{
-                    res.data.fields.map( (field, index) => {
-                        if(field.choices == undefined) {
-                            questions[index] = field.label
-                            vars[index] = field.variable_name
-                            types[index] = 'textfield'
-                        }
-                        else if (field.choices) {
-                            var opta = []
-                            field.choices.map( (choice) => {
-                                opta.push(choice.value)
-                            });
-                            options[index] = opta
-                            questions[index] = field.label
-                            vars[index] = field.variable_name
-                            types[index] = 'choice'
-                        }
-                    })
-                    this.setState({
-                        questions: questions,
-                        vars: vars,
-                        options: options,
-                        types: types
-                    })
+                    if(res.data.subquestionText) {
+                        var locs = []
+                        res.data.fields.map( (field, index) => {
+                            if(field.datatype == 'integer') careHandle = 'int'
+                            if(field.choices == undefined) {
+                                // Text Question
+                                var loc = {}
+                                loc.index = res.data.subquestionText.indexOf('' + field.variable_name)
+                                loc.name = field.variable_name
+                                locs.push(loc)
+                            }
+                            else if (field.choices || field.datatype == 'boolean') {
+                                // Multiple Choice Question
+                                var loc = {}
+                                loc.index = res.data.subquestionText.indexOf('' + field.variable_name)
+                                loc.name = field.variable_name
+                                locs.push(loc)
+                            }
+                        })
+                        locs.sort((a, b) => (a.index - b.index))
+                        res.data.fields.map( field => {
+                            if(field.datatype == 'integer') careHandle = 'int'
+                            if(field.choices == undefined) {
+                                // Text Question
+                                var index
+                                locs.map((loc, i) => {
+                                    if (loc.name == field.variable_name) {
+                                        index = i
+                                    }
+                                })
+                                if (field.label == 'no label') questions[index] = res.data.questionText
+                                else questions[index] = field.label
+                                vars[index] = field.variable_name
+                                types[index] = 'textfield'
+                            }
+                            else if (field.choices || field.datatype == 'boolean') {
+                                // Multiple Choice Question
+                                var index
+                                locs.map((loc, i) => {
+                                    if (loc.name == field.variable_name) {
+                                        index = i
+                                    }
+                                })
+                                var opta = []
+                                field.choices.map( (choice) => {
+                                    opta.push(choice.value)
+                                })
+                                options[index] = opta
+                                questions[index] = field.label
+                                vars[index] = field.variable_name
+                                types[index] = 'choice'
+                            }
+                        })
+                    }
+                    else {
+                        res.data.fields.map( (field, index) => {
+                            if(this.state.question && this.state.question.mode == 'Iterative') {
+                                console.log('Absolute')
+                            }
+                            if(field.datatype == 'integer') careHandle = 'int'
+                            if(field.choices == undefined) {
+                                // Text Question
+                                if (field.label == 'no label') questions[index] = res.data.questionText
+                                else questions[index] = field.label
+                                console.log('This is here: ', this.state.question)
+                                if(this.state.question && this.state.question.mode == 'Iterative') {
+                                    var count = this.state.iterator
+                                    console.log('Control')
+                                    vars[index] = field.variable_name.split('[')[0] + '[' + this.state.iterator + ']'
+                                    count++
+                                    this.setState({
+                                        iterator: count
+                                    })
+                                }
+                                else vars[index] = field.variable_name
+                                types[index] = 'textfield'
+                            }
+                            else if (field.choices || field.datatype == 'boolean') {
+                                // Multiple Choice Question
+                                var opta = []
+                                field.choices.map( (choice) => {
+                                    opta.push(choice.value)
+                                })
+                                options[index] = opta
+                                questions[index] = field.label
+                                console.log('This is here: ', this.state.question)
+                                if(this.state.question && this.state.question.mode == 'Iterative') {
+                                    var count = this.state.iterator
+                                    console.log('Control')
+                                    vars[index] = field.variable_name.split('[')[0] + '[' + this.state.iterator + ']'
+                                    count++
+                                    this.setState({
+                                        iterator: count
+                                    })
+                                }
+                                else vars[index] = field.variable_name
+                                types[index] = 'choice'
+                            }
+                        })
+                    }
+                    question.questions = questions
+                    question.vars = vars
+                    question.types = types
+                    question.options = options
+                    if(this.state.question && this.state.question.mode == 'Iterative') {
+                        question.mode = 'Iterative'
+                    }
+                    else question.mode = 'normal'
+                    question.careHandle = careHandle
+                    this.setState({question})
                 }
             }).catch(err => {
-                console.log('Error getting the questions: ', err);
+                console.log('Error getting the questions: ', err)
                 throw new Error('Error getting the questions: ', err)
             })
         }
         else {
-            console.log('No Session ID found....');
-            throw new Error('No Session ID found....');
+            console.log('No Session ID found....')
+            throw new Error('No Session ID found....')
         }
     }
 
     // To set the variables at the docassembke end
     setQuestion = (variablePayload) => {
-        var bodyFormData = new FormData();
-        bodyFormData.set('key', 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B');
-        bodyFormData.set('i', 'docassemble.playground1:' + this.state.service + '.yml');
-        bodyFormData.set('session', this.state.sessionId);
-        bodyFormData.set('secret', this.state.secret);
-        bodyFormData.set('variables', variablePayload);
-        console.log('Sending: ', variablePayload);
+        var bodyFormData = new FormData()
+        if(this.state.question.mode && this.state.question.mode == 'Iterative') {
+            if(this.state.question.setvars[ this.state.question.vars[0] ] == 'no') {
+                console.log('Opted Out')
+                var question = this.state.question
+                var setvars = {}
+                setvars[this.state.question.vars[0].split('.')[0]] = 'no'
+                question.setvars = setvars
+                question.mode = 'normal'
+                this.setState({
+                    question,
+                    iterator: null
+                })
+                variablePayload = JSON.stringify(setvars)
+            }
+        }
+        bodyFormData.set('key', 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B')
+        bodyFormData.set('i', 'docassemble.playground1:' + this.state.service + '.yml')
+        // bodyFormData.set('i', 'docassemble.playground1:' + this.state.service + '.yml')
+        bodyFormData.set('session', this.state.sessionId)
+        bodyFormData.set('secret', this.state.secret)
+        bodyFormData.set('variables', variablePayload)
+        console.log('Sending: ', variablePayload)
         Axios.post(
             'https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/session', bodyFormData
         ).then( res => {
-            console.log('Successfully updated the variables: ', res);
-            this.setState({
-                setvars: {},
-                vars: [],
-                types: [],
-                options: [],
-                questions: [],
-            })
-            this.getQuestions();
+            console.log('Successfully updated the variables: ', res)
+            const modeForward = this.state.question.mode
+            var question = new QuestionModule()
+            question.mode = modeForward
+            this.setState({question})
+            // Get the Next Question
+            this.getQuestions()
             // Handle Response to set furthur variables
-            // this.continues();
+            // this.continues()
         }).catch( err => {
-            console.log('Error submitting the payload: ', variablePayload, ' Error: ', err);
-        });
-    }
-
-    // 
-    payloadMaker = () => {
-
-    }
-
-    // For use incase Controller changes the Step for the Active Form
-    setForm = () => {
-
-    }
-
-    // Form Validation
-    checkForm = () => {
-
+            console.log('Error submitting the payload: ', variablePayload, ' Error: ', err)
+        })
     }
 
     // transit onChange form accordingle into the state
     formChange = (event) => {
-        // console.log('Event target: ', event.target.name);
-        console.log('PRE');
-        var setvars = this.state.setvars
-        if(event.target.name == 'rent') setvars[event.target.name] = parseInt(event.target.value)
-        else setvars[event.target.name] = event.target.value
-
-        this.setState({
-            setvars
-        })
+        // get the intital QuestionModule
+        var question = this.state.question
+        if(question.careHandle && question.careHandle == 'int') question.setvars[event.target.name] = parseInt(event.target.value)
+        else question.setvars[event.target.name] = event.target.value
+        // set the Value in the QuestionModule
+        this.setState({question})
     }
 
     radioChange = (event) => {
-        console.log('Radio change: ', event.target.value);
-        var iteration = parseInt(event.target.value.split(' ')[1]);
-        var value = event.target.value.split(' ')[0];
-        var setvars = this.state.setvars;
-        // console.log();
-        setvars[this.state.vars[iteration]] = value;
-        console.log('The Choosy setvars: ', setvars);
-        this.setState({
-            setvars: setvars
-        })
+        console.log('Radio change: ', event.target.value)
+        var iteration = parseInt(event.target.value.split(' ')[1])
+        var value = event.target.value.split(' ')[0]
+        // Get the current QuestionModule
+        var question = this.state.question
+        question.setvars[question.vars[iteration]] = value
+        // Set the new QuestionModule
+        this.setState({question})
     }
 
     seekFormFrontStroke = () => {
-        // var payload = {};
-        // setvars.map( element => {
-        //     payload[element] = 
-        // });
-        this.setQuestion(JSON.stringify(this.state.setvars));
+        this.setQuestion(JSON.stringify(this.state.question.setvars))
+    }
+
+    seekFormBackStroke = () => {
+        var bodyFormData = new FormData()
+        bodyFormData.set('key', 'V9P61G3EGKFI11LOG4G25F6UQZHSFR0B')
+        bodyFormData.set('i', 'docassemble.playground1:' + this.state.service + '.yml')
+        // bodyFormData.set('i', 'docassemble.playground1:' + this.state.service + '.yml')
+        bodyFormData.set('session', this.state.sessionId)
+        bodyFormData.set('secret', this.state.secret)
+
+        Axios.post(
+            'https://cors-anywhere.herokuapp.com/https://legalzoom.docassemble.community.lawyer/api/session/back', bodyFormData
+        ).then(res => {
+            console.log('Succes going back: ', res)
+            this.getQuestions()
+        }).catch(err => {
+            console.log('Error going back one step: ', err);
+            return err
+        })
     }
 
     displayEndFile = (file) => {
@@ -343,54 +398,62 @@ export default class ServiceModule extends Component {
 
     // <BUILD> <REM>
     componentDidUpdate = () => {
-        console.log('State of the service module has been changed: ', this.state);
+        console.log('State of the service module has been changed: ', this.state)
     }
     
     render() {
 
-        const { step, questions, set, lengths, progress, active, formSum, service, category, setvars, vars, types, options, file, loading } = this.state;
+        const { step, question, set, lengths, progress, active, formSum, service, file, loading } = this.state
 
         const formSegment = (
             <div className = 'services-module-questions'>
+                { question ? (<span className = 'services-module-questions-heading'>{question.qtHead}</span>) : (null)}
+                {console.log(question)}
                 {
-                    (types.length && vars.length) ? types.map( (type, index) => {
+                    /* Check if the question exists and if it exists map and draw a UI  */
+                    // A library for these checks?
+                    (question && question.types && question.types.length && question.vars.length) ? question.types.map( (type, index) => {
                         if( type == 'textfield' ) {
-                            console.log('HERE');
                             return (
-                                <div key = {index} className='services-module-questions-element col'>
+                                <div key = {index} className='services-module-questions-element'>
                                     <TextField
                                         id = "standard-with-placeholder"
-                                        label = {questions[index]}
-                                        placeholder = {questions[index]}
+                                        label = {question.questions[index]}
+                                        placeholder = {question.questions[index]}
                                         // name = {question}
-                                        name = {vars[index]}
+                                        name = {question.vars[index]}
                                         // className={classes.textField}
                                         onChange = {this.formChange}
                                         margin = "normal"
                                         className = 'test-text'
-                                        variant="outlined"
+                                        variant="filled"
+                                        key={index}
                                     />
                                 </div>
                             )
                         }
                         else if ( type == 'choice' ) {
                             return (
-                                <div key={index} className='service-module-questions-element-radiogroup col'>
-                                    <RadioGroup
-                                        aria-label="Gender"
-                                        name="gender1"
-                                        // className={classes.group}
-                                        // value={this.state.value}
-                                        onChange={this.radioChange}
-                                    >
-                                        {
-                                            options[index].map( option => {
-                                                return (
-                                                    <FormControlLabel value={option + ' ' + index} control={<Radio />} label={option} />
-                                                )
-                                            })
-                                        }
-                                    </RadioGroup>
+                                <div key={index} className='services-module-questions-element-radiogroup'>
+                                    {/* <div className='services-module-questions-element-radiogroup-container'> */}
+                                        <RadioGroup
+                                            row
+                                            aria-label="Gender"
+                                            name="gender1"
+                                            // className={classes.group}
+                                            // value={this.state.value}
+                                            onChange={this.radioChange}
+                                            key={index}
+                                        >
+                                            {
+                                                question.options[index].map( option => {
+                                                    return (
+                                                        <FormControlLabel className='services-module-questions-element-radio' value={option + ' ' + index} control={<Radio />} label={option} />
+                                                    )
+                                                })
+                                            }
+                                        </RadioGroup>
+                                    {/* </div> */}
                                 </div>
                             )
                         }
@@ -453,16 +516,25 @@ export default class ServiceModule extends Component {
         )
 
         return (
-            <div className = {'services-module services-module-' + category} >
-                {(formSegment)}
-                {seekControls}
-                {endFile}
+            <div className='services'>
+                <div className = 'services-module' >
+                    {formSegment}
+                    {seekControls}
+                    {endFile}
+                </div>
             </div>
         )
     }
 }
 
 class QuestionModule {
-        
+    qtHead
+    questions
+    types
+    vars
+    setvars
+    mode
+    options
+    careHandle
 }
 

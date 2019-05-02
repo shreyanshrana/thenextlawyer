@@ -1,7 +1,9 @@
 .footer {
   background-color: #0081cf;
   padding: 50px 150px;
-
+  @media screen and (max-width: 600px) {
+    padding: 5px 15px;
+  }
   &__social-media-icons {
     padding: 10px;
     padding-bottom: 0;

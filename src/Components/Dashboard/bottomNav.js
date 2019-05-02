@@ -14,14 +14,15 @@ var Home = {
 function BottomNav(props) {
   return (
     <div className="test">
-      <Link to="/home">
-        <i class="fa fa-file-signature" style={Home} />
+      <Link to="/dashboard">
+        <span className="display6 col-6 col-xs-6 float-left color-white text-center">
+          <ion-icon name="document" />
+        </span>
       </Link>
-      <Link to="/guild">
-        <i class="fa fa-file-download" style={Home} />
-      </Link>
-      <Link to="/stats">
-        <i class="fa fa-user-circle" style={Home} />
+      <Link to="/download-form">
+        <span className="display6 col-6 col-xs-6 float-left color-white text-center">
+          <ion-icon name="download" />
+        </span>
       </Link>
     </div>
   );

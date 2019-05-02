@@ -1,8 +1,8 @@
 import React from "react";
 
 const Download_Icon = props => {
-
-    const download_color = (props.document_state=="complete") ? "#aceca1" : "#a6d9f7";
+  const download_color =
+    props.document_state == "complete" ? "#aceca1" : "#a6d9f7";
   return (
     <div className="col-4 text-center float-left clearfix">
       <div className="display3 mb-0">
@@ -10,7 +10,7 @@ const Download_Icon = props => {
           name="document"
           style={{ color: download_color, margin: "10px" }}
         />
-        <div className="display10" style={{ margin: "-30%", padding: "5px" }}>
+        <div className="display9" style={{ margin: "-30%", padding: "5px" }}>
           {props.document_title}
           <br />
           <a

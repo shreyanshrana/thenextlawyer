@@ -7,8 +7,9 @@
     "start-server": "http-server -c-1 -p 3000",
     "predeploy": "npm run build",
     "deploy": "",
-    "dev": "",
-    "start": "webpack-dev-server --mode development --open --hot",
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p",
     "build": "webpack --mode production",
     "test": "ninenine"
   },
@@ -31,8 +32,9 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "autosuggest-highlight": "^3.1.1",
-    "classnames": "^2.2.6",
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "express": "^4.16.4",
     "firebase": "^5.9.2",
     "react": "^16.8.4",
     "react-animate-on-scroll": "^2.1.5",

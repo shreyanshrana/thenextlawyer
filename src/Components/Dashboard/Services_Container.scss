@@ -2,6 +2,10 @@
   font-family: "Roboto", sans-serif;
   position: absolute;
   left: 200px;
+  @media screen and (max-width: 600px) {
+    left: 0;
+    padding-bottom: 40px;
+  }
   top: 55px;
   padding: 20px;
 }

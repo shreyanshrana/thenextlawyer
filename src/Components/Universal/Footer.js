@@ -5,7 +5,7 @@ import "./Footer.scss";
 const Footer = props => {
   return (
     <div className="footer clearfix color-white">
-      <div className="col-4 float-left display6 text-center">
+      <div className="col-lg-4 col-xs-12 float-left display6 text-center">
         <a className="footer__social-media-icons">
           <ion-icon name="logo-facebook" />
         </a>
@@ -13,7 +13,7 @@ const Footer = props => {
         <div className="display8 font-weight-light ">TheNextLawyer</div>
       </div>
 
-      <div className="col-4 float-left">
+      <div className="col-lg-4 col-xs-6 float-left hide-phone">
         <div className="display7 font-weight-light text-left">Services</div>
         <ul>
           <li className="display10 font-weight-light text-left">
@@ -28,7 +28,7 @@ const Footer = props => {
           </li>
         </ul>
       </div>
-      <div className="col-4 float-left">
+      <div className="col-lg-4 col-xs-6 float-left hide-phone">
         <div className="display7 font-weight-light text-left">Useful links</div>
         <ul>
           <li className="display10 font-weight-light text-left">About Us</li>

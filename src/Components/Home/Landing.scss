@@ -5,8 +5,19 @@
   // left: 50%;
   // top: 45%;
   // transform: translate(-50%, -50%);
-  margin-top: 58px;
+
+  @media screen and (max-width: 1920px) {
+    margin-top: 58px;
+  }
+  @media screen and (max-width: 600px) {
+    margin-top: -10px;
+  }
+
   height: 70vh;
+
+  @media screen and (max-width: 600px) {
+    height: 90vh;
+  }
   background: url("../../res/img/background-home.jpg");
   background-position: center;
   background-attachment: fixed;
@@ -18,6 +29,9 @@
     font-family: "Roboto", sans-serif;
     padding: 5px;
     padding-top: 110px;
+    @media screen and (max-width: 600px) {
+      padding-top: 175px;
+    }
     font-weight: 100;
   }
   &__subtitle {
@@ -27,8 +41,29 @@
     text-align: center;
     padding: 5px;
   }
+
+  &__subtext {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-align: center;
+    padding: 25px;
+  }
+
+  &__phone-btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: "Roboto", sans-serif;
+    color: white !important;
+    text-align: center;
+    padding: 5px;
+  }
   &__services {
     padding: 80px;
+    @media screen and (max-width: 600px) {
+      padding: 80px 20px;
+    }
     &--button {
       padding: 20px 60px;
     }
@@ -39,6 +74,10 @@
 
   &__how-it-works {
     padding: 100px 0;
+
+    @media screen and (max-width: 600px) {
+      padding: 10px 0;
+    }
     &--card-container {
       padding: 0 45px;
     }
@@ -61,5 +100,20 @@
   transition: all 0.3s;
   &:hover {
     box-shadow: 0 0 5px rgba(black, 0.8) !important;
+  }
+  @media screen and (max-width: 600px) {
+    min-height: auto !important;
+    margin-bottom: 25px;
+  }
+}
+
+.hide-phone {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+.hide-desktop {
+  @media screen and (min-width: 600px) {
+    display: none;
   }
 }
