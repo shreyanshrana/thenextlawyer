@@ -7,7 +7,7 @@
     "start-server": "http-server -c-1 -p 3000",
     "predeploy": "npm run build",
     "deploy": "",
-    "dev": "",
+    "dev": "webpack-dev-server --mode development --open --hot",
     "start": "node server.js",
     "heroku-postbuild": "webpack -p",
     "build": "webpack --mode production",
